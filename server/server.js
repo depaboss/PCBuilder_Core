@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 
 //CONNESSION DATABASE MONGOLAB
 var mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://admin:admin@ds061196.mlab.com:61196/test_1', function(err){
   if(err){
     throw err;
@@ -34,10 +35,10 @@ app.use('/vendor', express.static(path.join(__dirname, '..', 'build','vendors'))
 /////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
 //LE NOSTRE API
-app.use('/heroes',require('./Esemp_Heroes'));
+// app.use('/heroes',require('./Esemp_Heroes'));
 // app.use('/computer', require('./computers'));
 // app.use('/netbooks', require('/netbooks'));
-// app.use('/components', require('./components'));
+app.use('/components', require('./components'));
 
 /////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
