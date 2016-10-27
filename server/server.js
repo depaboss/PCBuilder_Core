@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 
 //CONNESSION DATABASE MONGOLAB
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://christian:artoo@ds031167.mlab.com:31167/artoo_be', function(err){
+mongoose.connect('mongodb://admin:admin@ds061196.mlab.com:61196/test_1', function(err){
   if(err){
     throw err;
   }
@@ -35,6 +35,9 @@ app.use('/vendor', express.static(path.join(__dirname, '..', 'build','vendors'))
 /////////////////////////////////////////////////////////////////////////////////
 //LE NOSTRE API
 app.use('/heroes',require('./Esemp_Heroes'));
+// app.use('/computer', require('./computers'));
+// app.use('/netbooks', require('/netbooks'));
+// app.use('/components', require('./components'));
 
 /////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
@@ -47,7 +50,7 @@ app.get('/',function(req, res){
 //START SERVER
 app.listen(3000, function(){
   console.log('server express start on: http://localhost:' + 3000);
-})
+});
 
 /////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
