@@ -36,8 +36,8 @@ app.use('/vendor', express.static(path.join(__dirname, '..', 'build','vendors'))
 /////////////////////////////////////////////////////////////////////////////////
 //LE NOSTRE API
 // app.use('/heroes',require('./Esemp_Heroes'));
-// app.use('/computer', require('./computers'));
-// app.use('/netbooks', require('/netbooks'));
+// app.use('/computer', require('/computers/computers'));
+app.use('/notebooks', require('./notebooks/notebooks.index.js'));
 app.use('/components', require('./components'));
 
 /////////////////////////////////////////////////////////////////////////////////
