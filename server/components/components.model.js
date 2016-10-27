@@ -1,12 +1,22 @@
-const Schema = require('mongoose').Schema;
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema;
 
 var componentsSchema = new Schema({
-	name: String,
-	avatar: String,
-	health: Number,
-	mana: Number,
-	weapons: [{ type: Schema.Types.ObjectId, ref: 'Weapon' }],
-	hasPowers: Boolean
+	model: String,
+	type: {
+			type: String,
+			enum: ['CPU', 'CPU Cooler', 'Motherboard', 'Memory', 'Storage', 'GPU', 'Power Supply', 'Case', 'Mouse', 'Monitor'],
+			require: true
+	},
+	description: Object,
+	computerType: {
+			type: String,
+			enum: ['Desktop', 'Notebook'],
+			require: true
+	},
+	price: Number,
+	releaseDate: Date,
+	manufacturer: String
 });
 
 var Components = mongoose.model('Components',componentsSchema);
